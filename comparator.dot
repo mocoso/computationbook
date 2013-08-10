@@ -1,11 +1,18 @@
 digraph Comparator {
-  nodesep = 1;
-  ranksep = 1;
-  1 -> 2 [label="0/0;R"];
-  1 -> 3 [label="1/1;R"];
-  1 -> 6 [label="_/_;L"];
-  2 -> 1 [label="0/0;R"];
-  2 -> 5 [label="1/1;R"];
-  3 -> 4 [label="0/0;R"];
-  3 -> 1 [label="1/1;R"];
+  "" [shape=none]
+  "read input 1" [shape=circle]
+  "read input 2 (0)" [shape=circle]
+  "read input 2 (1)" [shape=circle]
+  "input 1 greater" [shape=doublecircle]
+  "input 2 greater" [shape=doublecircle]
+  "inputs equal" [shape=doublecircle]
+
+  "" -> "read input 1"
+  "read input 1" -> "read input 2 (0)" [label="0/0;R"]
+  "read input 1" -> "read input 2 (1)" [label="1/1;R"]
+  "read input 1" -> "inputs equal" [label="_/_;L"]
+  "read input 2 (0)" -> "read input 1" [label="0/0;R"]
+  "read input 2 (0)" -> "input 2 greater" [label="1/1;R"]
+  "read input 2 (1)" -> "input 1 greater" [label="0/0;R"]
+  "read input 2 (1)" -> "read input 1" [label="1/1;R"]
 }
