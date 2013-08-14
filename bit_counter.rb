@@ -1,3 +1,11 @@
+# The machine is assumed to start on the most significant
+# bit of the input number n. It will work until it reaches
+# its terminating accept state 7, at which point the
+# tape head should be on the least significant bit
+# of the output result k.
+#
+# Encoding is just numbers in binary.
+
 $: << File.expand_path('../', __FILE__)
 require 'the_ultimate_machine'
 require 'minitest/autorun'
@@ -85,12 +93,12 @@ class TestMachine < MiniTest::Unit::TestCase
   end
 end
 
-# >> Run options: --seed 51261
+# >> Run options: --seed 59607
 # >> 
 # >> # Running tests:
 # >> 
 # >> .
 # >> 
-# >> Finished tests in 0.399200s, 2.5050 tests/s, 641.2826 assertions/s.
+# >> Finished tests in 0.400798s, 2.4950 tests/s, 638.7257 assertions/s.
 # >> 
 # >> 1 tests, 256 assertions, 0 failures, 0 errors, 0 skips

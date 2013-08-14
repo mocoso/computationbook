@@ -1,18 +1,12 @@
 digraph bit_counter {
+  node [shape=circle]
   "" [shape=none]
-  "0" [shape=circle]
-  "1" [shape=circle]
-  "2" [shape=circle]
-  "3" [shape=circle]
-  "4" [shape=circle]
-  "5" [shape=circle]
-  "6" [shape=circle]
   "7" [shape=doublecircle]
 
   "" -> "0"
   "0" -> "0" [label="0/0;R"]
   "0" -> "1" [label="1/1;R"]
-  "0" -> "7" [label="_/);L"]
+  "0" -> "7" [label="_/_;L"]
   "1" -> "1" [label="0/0;R\n1/1;R"]
   "1" -> "2" [label="_/_;L"]
   "2" -> "3" [label="0/_;L\n1/_;L"]
