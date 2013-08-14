@@ -60,45 +60,45 @@ class TestMachine < MiniTest::Unit::TestCase
   end
 
   def test_machine
-    assert_equal 0, run_machine(0), "k of 0 should be 0"
-    assert_equal 1, run_machine(1), "k of 1 should be 1"
+    assert_equal 0, run_machine(0), "f(0) should be 0"
+    assert_equal 1, run_machine(1), "f(1) should be 1"
 
     (2..3).each do |n|
-      assert_equal 2, run_machine(n), "k of #{n} should be 2"
+      assert_equal 2, run_machine(n), "f(#{n}) should be 2"
     end
 
     (4..7).each do |n|
-      assert_equal 3, run_machine(n), "k of #{n} should be 3"
+      assert_equal 3, run_machine(n), "f(#{n}) should be 3"
     end
 
     (8..15).each do |n|
-      assert_equal 4, run_machine(n), "k of #{n} should be 4"
+      assert_equal 4, run_machine(n), "f(#{n}) should be 4"
     end
 
     (16..31).each do |n|
-      assert_equal 5, run_machine(n), "k of #{n} should be 5"
+      assert_equal 5, run_machine(n), "f(#{n}) should be 5"
     end
 
     (32..63).each do |n|
-      assert_equal 6, run_machine(n), "k of #{n} should be 6"
+      assert_equal 6, run_machine(n), "f(#{n}) should be 6"
     end
 
     (64..127).each do |n|
-      assert_equal 7, run_machine(n), "k of #{n} should be 7"
+      assert_equal 7, run_machine(n), "f(#{n}) should be 7"
     end
 
     (128..255).each do |n|
-      assert_equal 8, run_machine(n), "k of #{n} should be 8"
+      assert_equal 8, run_machine(n), "f(#{n}) should be 8"
     end
   end
 end
 
-# >> Run options: --seed 59607
+# >> Run options: --seed 3138
 # >> 
 # >> # Running tests:
 # >> 
 # >> .
 # >> 
-# >> Finished tests in 0.400798s, 2.4950 tests/s, 638.7257 assertions/s.
+# >> Finished tests in 0.409080s, 2.4445 tests/s, 625.7945 assertions/s.
 # >> 
 # >> 1 tests, 256 assertions, 0 failures, 0 errors, 0 skips
