@@ -21,17 +21,17 @@ end
 
 MACHINE_RULEBOOK = DTMRulebook.new([
   TMRule.new(0, '0', 0, 'X', :right),
-  TMRule.new(0, '1', 4, 'X', :left),
-  TMRule.new(1, '0', 4, 'X', :left),
-  TMRule.new(1, '1', 4, 'X', :left),
+  TMRule.new(0, '1', 2, 'X', :left),
+  TMRule.new(1, '0', 2, 'X', :left),
+  TMRule.new(1, '1', 2, 'X', :left),
   TMRule.new(1, 'X', 1, 'X', :right),
-  TMRule.new(4, 'X', 4, 'X', :left),
-  TMRule.new(4, '0', 6, '1', :right),
-  TMRule.new(4, '1', 4, '0', :left),
-  TMRule.new(4, '_', 6, '1', :right),
-  TMRule.new(6, '0', 6, '0', :right),
-  TMRule.new(6, '1', 6, '1', :right),
-  TMRule.new(6, 'X', 1, 'X', :right),
+  TMRule.new(2, 'X', 2, 'X', :left),
+  TMRule.new(2, '0', 3, '1', :right),
+  TMRule.new(2, '1', 2, '0', :left),
+  TMRule.new(2, '_', 3, '1', :right),
+  TMRule.new(3, '0', 3, '0', :right),
+  TMRule.new(3, '1', 3, '1', :right),
+  TMRule.new(3, 'X', 1, 'X', :right),
 ])
 
 class TestMachine < MiniTest::Unit::TestCase
