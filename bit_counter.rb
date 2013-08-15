@@ -20,18 +20,18 @@ class Tape
 end
 
 MACHINE_RULEBOOK = DTMRulebook.new([
-  TMRule.new(0, '0', 0, 'X', :right),
-  TMRule.new(0, '1', 2, 'X', :left),
-  TMRule.new(1, '0', 2, 'X', :left),
-  TMRule.new(1, '1', 2, 'X', :left),
-  TMRule.new(1, 'X', 1, 'X', :right),
-  TMRule.new(2, 'X', 2, 'X', :left),
-  TMRule.new(2, '0', 3, '1', :right),
-  TMRule.new(2, '1', 2, '0', :left),
-  TMRule.new(2, '_', 3, '1', :right),
-  TMRule.new(3, '0', 3, '0', :right),
-  TMRule.new(3, '1', 3, '1', :right),
-  TMRule.new(3, 'X', 1, 'X', :right),
+  TMRule.new(:id_most_significant_bit,  '0', :id_most_significant_bit,  'X', :right),
+  TMRule.new(:id_most_significant_bit,  '1', :increment_counter,        'X', :left),
+  TMRule.new(:delete_next_bit,          '0', :increment_counter,        'X', :left),
+  TMRule.new(:delete_next_bit,          '1', :increment_counter,        'X', :left),
+  TMRule.new(:delete_next_bit,          'X', :delete_next_bit,          'X', :right),
+  TMRule.new(:increment_counter,        'X', :increment_counter,        'X', :left),
+  TMRule.new(:increment_counter,        '0', :return_to_input,          '1', :right),
+  TMRule.new(:increment_counter,        '1', :increment_counter,        '0', :left),
+  TMRule.new(:increment_counter,        '_', :return_to_input,          '1', :right),
+  TMRule.new(:return_to_input,          '0', :return_to_input,          '0', :right),
+  TMRule.new(:return_to_input,          '1', :return_to_input,          '1', :right),
+  TMRule.new(:return_to_input,          'X', :delete_next_bit,          'X', :right),
 ])
 
 class TestMachine < MiniTest::Unit::TestCase
@@ -47,7 +47,7 @@ class TestMachine < MiniTest::Unit::TestCase
   end
 
   def initial_state
-    0
+    :id_most_significant_bit
   end
 
   def run_machine(n)
