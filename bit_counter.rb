@@ -20,15 +20,12 @@ class Tape
 end
 
 MACHINE_RULEBOOK = DTMRulebook.new([
-  TMRule.new(0, '0', 0, '0', :right),
-  TMRule.new(0, '1', 1, '1', :right),
-  TMRule.new(1, '0', 1, '0', :right),
-  TMRule.new(1, '1', 1, '1', :right),
-  TMRule.new(1, '_', 2, '_', :left),
-  TMRule.new(2, '0', 3, '_', :left),
-  TMRule.new(2, '1', 3, '_', :left),
-  TMRule.new(3, '0', 3, '0', :left),
-  TMRule.new(3, '1', 3, '1', :left),
+  TMRule.new(0, '0', 0, 'X', :right),
+  TMRule.new(0, '1', 3, 'X', :left),
+  TMRule.new(1, '0', 3, 'X', :left),
+  TMRule.new(1, '1', 3, 'X', :left),
+  TMRule.new(1, 'X', 1, 'X', :right),
+  TMRule.new(3, 'X', 3, 'X', :left),
   TMRule.new(3, '_', 4, '_', :left),
   TMRule.new(4, '0', 6, '1', :right),
   TMRule.new(4, '1', 4, '0', :left),
