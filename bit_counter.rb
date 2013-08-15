@@ -36,7 +36,7 @@ MACHINE_RULEBOOK = DTMRulebook.new([
 
 class TestMachine < MiniTest::Unit::TestCase
   def build_machine(n)
-    configuration = TMConfiguration.new(0, input_tape(n))
+    configuration = TMConfiguration.new(initial_state, input_tape(n))
     accept_states = []
     DTM.new(configuration, accept_states, MACHINE_RULEBOOK)
   end
@@ -44,6 +44,10 @@ class TestMachine < MiniTest::Unit::TestCase
   def input_tape(n)
     head, *rest = n.to_s(2).chars
     tape = Tape.new([], head, rest, '_')
+  end
+
+  def initial_state
+    0
   end
 
   def run_machine(n)
