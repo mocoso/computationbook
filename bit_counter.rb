@@ -20,7 +20,6 @@ class Tape
 end
 
 MACHINE_RULEBOOK = DTMRulebook.new([
-  TMRule.new(:id_most_significant_bit,  '0', :id_most_significant_bit,  'X', :right),
   TMRule.new(:id_most_significant_bit,  '1', :increment_counter,        'X', :left),
   TMRule.new(:delete_next_bit,          '0', :increment_counter,        'X', :left),
   TMRule.new(:delete_next_bit,          '1', :increment_counter,        'X', :left),
