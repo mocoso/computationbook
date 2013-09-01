@@ -25,6 +25,8 @@ RIGHT = -> p { p[FALSE] }
 
 DECREMENT = -> n { LEFT[n[-> p { PAIR[RIGHT[p]][INCREMENT[RIGHT[p]]]} ][PAIR[ZERO][ZERO]]] }
 
+ADD = -> a { -> b { a[INCREMENT][b] } }
+
 # def decrement(n)
 #   pair = [0, 0]
 #   n.times do
@@ -103,4 +105,8 @@ describe 'INCREMENT' do
   it { to_integer(INCREMENT[ZERO]).should == 1 }
   it { to_integer(INCREMENT[ONE]).should == 2 }
   it { to_integer(INCREMENT[TWO]).should == 3 }
+end
+
+describe 'ADD' do
+  it { to_integer(ADD[TWO][ONE]).should == 3 }
 end
