@@ -16,7 +16,6 @@ TRUE    = -> x { -> y { x } }
 FALSE   = -> x { -> y { y } }
 
 EQUALS_ZERO = -> n { n[-> x { FALSE }][TRUE] }
-EQUALS_ONE  = -> n { n[-> x { TRUE }][FALSE] }
 
 INCREMENT = -> n { -> p { -> x { n[p][p[x]] } } }
 
@@ -84,12 +83,6 @@ end
 describe 'DECREMENT' do
   it { to_integer(DECREMENT[ONE]).should == 0 }
   it { to_integer(DECREMENT[TWO]).should == 1 }
-end
-
-describe 'EQUALS_ONE' do
-  it { to_boolean(EQUALS_ONE[ZERO]).should == false }
-  it { to_boolean(EQUALS_ONE[ONE]).should == true }
-  xit { to_boolean(EQUALS_ONE[TWO]).should == false }
 end
 
 describe 'fib' do
