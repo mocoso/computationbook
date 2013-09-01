@@ -20,7 +20,7 @@ FALSE   = -> x { -> y { y } }
 
 INCREMENT = -> n { -> p { -> x { n[p][p[x]] } } }
 
-PAIR = -> l { -> r { -> p { p[l][r] } } }
+PAIR  = -> l { -> r { -> p { p[l][r] } } }
 LEFT  = -> p { p[-> x { -> y { x } }] }
 RIGHT = -> p { p[-> x { -> y { y } }] }
 
