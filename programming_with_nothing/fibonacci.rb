@@ -43,18 +43,6 @@ FIB = -> n {
   ]
 }
 
-def fib(n)
-  if n == 0
-    1
-  else
-    if n == 1
-      1
-    else
-      fib(n-2) + fib(n-1)
-    end
-  end
-end
-
 describe 'to_integer' do
   it { to_integer(ZERO).should == 0 }
   it { to_integer(ONE).should == 1 }
@@ -85,14 +73,6 @@ end
 describe 'DECREMENT' do
   it { to_integer(DECREMENT[ONE]).should == 0 }
   it { to_integer(DECREMENT[TWO]).should == 1 }
-end
-
-describe 'fib' do
- it { fib(1).should == 1 }
- xit { fib(3).should == 3 }
- xit { fib(4).should == 5 }
- xit { fib(5).should == 8 }
- xit { fib(6).should == 13 }
 end
 
 describe 'FIB' do
