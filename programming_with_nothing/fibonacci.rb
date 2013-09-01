@@ -18,8 +18,6 @@ FIVE    = -> p { -> x {   p[p[p[p[p[x]]]]] } }
 TRUE    = -> x { -> y { x } }
 FALSE   = -> x { -> y { y } }
 
-EQUALS_ZERO = -> n { n[-> x { FALSE }][TRUE] }
-
 INCREMENT = -> n { -> p { -> x { n[p][p[x]] } } }
 
 PAIR = -> l { -> r { -> p { p[l][r] } } }
@@ -55,13 +53,6 @@ describe 'to_boolean' do
   it { to_boolean(FALSE).should == false }
 end
 
-describe 'EQUALS_ZERO' do
-  it { to_boolean(EQUALS_ZERO[ZERO]).should == true }
-  it { to_boolean(EQUALS_ZERO[ONE]).should == false }
-  it { to_boolean(EQUALS_ZERO[TWO]).should == false }
-  it { to_integer(EQUALS_ZERO[ZERO][ONE][TWO]).should == 1 }
-  it { to_integer(EQUALS_ZERO[ONE][ONE][TWO]).should == 2 }
-end
 
 describe 'LEFT' do 
   it { to_integer(LEFT[PAIR[ZERO][ONE]]).should == 0 }
