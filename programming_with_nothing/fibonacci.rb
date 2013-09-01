@@ -21,8 +21,8 @@ FALSE   = -> x { -> y { y } }
 INCREMENT = -> n { -> p { -> x { n[p][p[x]] } } }
 
 PAIR = -> l { -> r { -> p { p[l][r] } } }
-LEFT = -> p { p[TRUE] }
-RIGHT = -> p { p[FALSE] }
+LEFT  = -> p { p[-> x { -> y { x } }] }
+RIGHT = -> p { p[-> x { -> y { y } }] }
 
 ADD = -> a { -> b { a[INCREMENT][b] } }
 
