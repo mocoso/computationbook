@@ -26,17 +26,7 @@ PAIR = -> l { -> r { -> p { p[l][r] } } }
 LEFT = -> p { p[TRUE] }
 RIGHT = -> p { p[FALSE] }
 
-DECREMENT = -> n { LEFT[n[-> p { PAIR[RIGHT[p]][INCREMENT[RIGHT[p]]]} ][PAIR[ZERO][ZERO]]] }
-
 ADD = -> a { -> b { a[INCREMENT][b] } }
-
-# def decrement(n)
-#   pair = [0, 0]
-#   n.times do
-#     pair = [pair[1], pair[1]++]
-#   end
-#   pair[0]
-# end
 
 FIB = -> n {
   LEFT[
@@ -79,11 +69,6 @@ end
 
 describe 'RIGHT' do
   it { to_integer(RIGHT[PAIR[ZERO][ONE]]).should == 1 }
-end
-
-describe 'DECREMENT' do
-  it { to_integer(DECREMENT[ONE]).should == 0 }
-  it { to_integer(DECREMENT[TWO]).should == 1 }
 end
 
 describe 'FIB' do
